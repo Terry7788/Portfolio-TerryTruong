@@ -15,7 +15,7 @@
     background-attachment: fixed;
     padding-right: 8%;
     box-sizing: border-box;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(images/background.png);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(../Project 2/images/background.png);
 }
 
 .navbar{
@@ -98,16 +98,16 @@ button:hover{
     transition:transform 0.5s;
 }
 .card1{
-    background-image: url(images/pic-1.png);
+    background-image: url(../Project 2/images/pic-1.png);
 }
 .card2{
-    background-image: url(images/pic-2.png);
+    background-image: url(../Project 2/images/pic-2.png);
 }
 .card3{
-    background-image: url(images/pic-3.png);
+    background-image: url(../Project 2/images/pic-3.png);
 }
 .card4{
-    background-image: url(images/pic-4.png);
+    background-image: url(../Project 2/images/pic-4.png);
 }
 
 .card:hover{
