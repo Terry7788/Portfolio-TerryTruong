@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="homepage.css">
+    <script src="https://kit.fontawesome.com/d1e5d5911c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="projects.html">My Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        
+        
+    </header>
+    
+    <div class="content">
+        <!-------------------Contact---------------->
+<div id="contactme">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>terrytruongwork@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i>+61 412 773 949</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100009252418203"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/terrytruongg/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/terry-truong-6218b4257/"><i class="fa-brands fa-linkedin"></i></a>
+                </div> 
+                <a href="images/Resume- Terry Truong.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message"  rows="6"placeholder="Your Message"></textarea>
+                    <button type="submit"class="btn submit">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> Terry Truong 2024</p>
+    </div>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzDtu84doOgwXe_G9ydqVlsMffhvuT-t2knygLX_9Ve_Cx6lYgGbPAcQmU7tXZZOQrCqg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Your Message has been sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },50000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script> 
